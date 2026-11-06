@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#6c4cf1">
+<title>StudyNepal AI — Learn smarter</title>
+<style>
+:root{--bg:#f7f7ff;--ink:#1d2140;--muted:#68708d;--purple:#6c4cf1;--pink:#ff6e9c;--cyan:#39c6d8;--card:#fff;--line:#e9e8f5}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1150px;margin:auto;padding:13px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px}.logo{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,var(--purple),var(--pink));display:grid;place-items:center;color:white;font-size:21px}
+nav{display:flex;gap:18px;align-items:center}nav a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:650}
+button,.btn{border:0;border-radius:13px;padding:12px 17px;font-weight:800;cursor:pointer;background:var(--purple);color:white}
+button:hover,.btn:hover{filter:brightness(.96)}.outline{background:white;color:var(--purple);border:1px solid #d9d2ff}
+select{border:1px solid var(--line);border-radius:10px;padding:9px;background:white;color:var(--ink)}
+main{max-width:1150px;margin:auto;padding:28px 18px 60px}
+.hero{background:linear-gradient(120deg,#6047e9,#8a62f6 55%,#f06eae);border-radius:28px;padding:42px;color:white;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;overflow:hidden;position:relative}
+.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.06;margin:8px 0 15px}.hero p{max-width:560px;color:#f5efff;font-size:17px;line-height:1.6}
+.hero-art{align-self:center;justify-self:center;background:#ffffff20;border:1px solid #ffffff55;border-radius:28px;padding:25px;font-size:90px;transform:rotate(3deg)}
+.pill{display:inline-block;background:#ffffff25;padding:7px 12px;border-radius:30px;font-size:12px;font-weight:800;letter-spacing:.4px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.hero .outline{background:#fff;color:#6047e9;border:0}
+.section{margin-top:45px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:18px}.section h2{font-size:28px;margin:0}.sub{color:var(--muted);margin:7px 0 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 8px 24px #29205b08}
+.feature-icon{width:46px;height:46px;border-radius:15px;display:grid;place-items:center;font-size:23px;background:#f0edff;margin-bottom:13px}.card h3{margin:5px 0 8px}.card p{color:var(--muted);line-height:1.5;margin:0;font-size:14px}
+.price{font-size:32px;font-weight:900;margin:12px 0}.price small{font-size:13px;color:var(--muted);font-weight:600}.plan ul{padding-left:19px;color:var(--muted);line-height:1.9;font-size:14px}.plan.featured{border:2px solid var(--purple);position:relative}.tag{background:#eeeaff;color:var(--purple);font-size:11px;font-weight:900;border-radius:20px;padding:6px 9px;display:inline-block}
+.plan button{width:100%;margin-top:8px}.basic button{background:#eef0ff;color:var(--purple)}
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.tool{background:white;border:1px solid var(--line);border-radius:16px;padding:16px;text-align:left;color:var(--ink)}.tool b{display:block;margin-top:8px}.tool span{font-size:24px}
+.notice{background:#fff8e7;border:1px solid #ffe5a6;color:#72521b;padding:14px 16px;border-radius:14px;font-size:13px;line-height:1.5}
+footer{padding:25px 18px;text-align:center;color:var(--muted);border-top:1px solid var(--line);font-size:13px}
+.modal{display:none;position:fixed;inset:0;background:#11182dcc;z-index:20;padding:18px;overflow:auto;align-items:center;justify-content:center}.modal.show{display:flex}.dialog{background:white;border-radius:22px;max-width:520px;width:100%;padding:23px;position:relative}.close{position:absolute;right:14px;top:14px;background:#f0eff8;color:#333;padding:7px 11px}.qr{width:min(100%,300px);display:block;margin:14px auto;border-radius:12px;border:1px solid var(--line)}label{display:block;font-size:13px;font-weight:800;margin:13px 0 6px}input,textarea{width:100%;padding:12px;border:1px solid #dcd9ed;border-radius:11px;font:inherit}small.help{color:var(--muted);line-height:1.5;display:block;margin-top:8px}
+#toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#222;color:white;padding:12px 18px;border-radius:12px;display:none;z-index:40;font-size:13px}
+@media(max-width:760px){nav{display:none}.hero{grid-template-columns:1fr;padding:28px}.hero-art{font-size:65px;padding:16px}.grid{grid-template-columns:1fr}.tools{grid-template-columns:repeat(2,1fr)}.section-head{align-items:start;flex-direction:column}}
+</style></head>
+<body>
+<header><div class="nav"><div class="brand"><div class="logo">✦</div>StudyNepal AI</div><nav><a href="#features">Features</a><a href="#tools">Study tools</a><a href="#plans">Plans</a></nav><div style="display:flex;gap:8px;align-items:center"><select id="lang" aria-label="Language"><option value="en">English</option><option value="ne">नेपाली</option><option value="hi">हिन्दी</option></select><button onclick="document.querySelector('#plans').scrollIntoView({behavior:'smooth'})">Get Premium</button></div></div></header>
+<main>
+<section class="hero"><div><span class="pill">YOUR AI STUDY PARTNER</span><h1>Learn smarter.<br>Score better. ✨</h1><p>Understand difficult topics, create notes, practise questions and build a study routine — in Nepali, English or Hindi.</p><div class="actions"><button onclick="openTool('AI Study Chat')">Start learning free</button><button class="outline" onclick="document.querySelector('#plans').scrollIntoView({behavior:'smooth'})">Explore Premium</button></div></div><div class="hero-art">📚🤖</div></section>
+<section class="section" id="features"><div class="section-head"><div><h2>Everything you need to study</h2><p class="sub">Helpful tools for school, +2, college and lifelong learning.</p></div></div><div class="grid">
+<div class="card"><div class="feature-icon">💬</div><h3>AI Study Chat</h3><p>Ask questions and get clear, step-by-step explanations in your chosen language.</p></div>
+<div class="card"><div class="feature-icon">📝</div><h3>Smart Notes</h3><p>Turn topics and chapters into summaries, key points and revision notes.</p></div>
+<div class="card"><div class="feature-icon">🧠</div><h3>Quiz Generator</h3><p>Practise MCQs and topic questions with explanations and feedback.</p></div>
+<div class="card"><div class="feature-icon">📷</div><h3>Photo Question Solver</h3><p>Share a question image and learn how to approach it step by step.</p></div>
+<div class="card"><div class="feature-icon">📄</div><h3>PDF Study</h3><p>Study from your notes and documents with chapter summaries and key ideas.</p></div>
+<div class="card"><div class="feature-icon">📅</div><h3>Study Planner</h3><p>Organise subjects, revision sessions and exam preparation in one place.</p></div>
+</div></section>
+<section class="section" id="tools"><div class="section-head"><div><h2>Open a study tool</h2><p class="sub">These interface previews will connect to the AI service after backend setup.</p></div></div><div class="tools">
+<button class="tool" onclick="openTool('AI Study Chat')"><span>💬</span><b>AI Study Chat</b><small>Ask anything</small></button>
+<button class="tool" onclick="openTool('Notes Generator')"><span>📝</span><b>Notes Maker</b><small>Make revision notes</small></button>
+<button class="tool" onclick="openTool('Quiz Generator')"><span>🧠</span><b>Quiz Maker</b><small>Test your knowledge</small></button>
+<button class="tool" onclick="openTool('Study Planner')"><span>📅</span><b>Study Planner</b><small>Plan your week</small></button>
+</div></section>
+<section class="section" id="plans"><div class="section-head"><div><h2>Simple plans for every learner</h2><p class="sub">Start free. Upgrade when you need more study power.</p></div></div><div class="grid">
+<div class="card plan basic"><span class="tag">FREE</span><h3>Basic</h3><div class="price">Rs. 0 <small>/ forever</small></div><ul><li>Limited AI study chat</li><li>Basic notes and quizzes</li><li>Limited photo solver</li><li>Basic study planner</li><li>Advertisements shown</li></ul><button onclick="toast('You are viewing the free plan.')">Start Free</button></div>
+<div class="card plan featured"><span class="tag">POPULAR</span><h3>Premium 30 Days</h3><div class="price">Rs. 149 <small>/ 30 days</small></div><ul><li>Higher AI usage limits</li><li>Advanced notes and PDF analysis</li><li>More photo question solving</li><li>Advanced quizzes and mock tests</li><li>Priority AI access</li><li>Advertisements may be shown</li></ul><button onclick="pay('30 Days','149')">Choose Premium</button></div>
+<div class="card plan"><span class="tag">BEST VALUE</span><h3>Premium Yearly</h3><div class="price">Rs. 999 <small>/ year</small></div><ul><li>All Premium features</li><li>Higher usage limits</li><li>Study progress tools</li><li>Priority AI access</li><li>Advertisements may be shown</li></ul><button onclick="pay('1 Year','999')">Choose Yearly</button></div>
+</div><div class="grid" style="margin-top:14px"><div class="card"><b>7 Days — Rs. 49</b><p class="sub">Short-term Premium access</p><button style="margin-top:12px" onclick="pay('7 Days','49')">Choose 7 Days</button></div><div class="card"><b>90 Days — Rs. 349</b><p class="sub">Three months of Premium</p><button style="margin-top:12px" onclick="pay('90 Days','349')">Choose 90 Days</button></div><div class="card"><b>Premium includes ads</b><p class="sub">Premium pays for advanced study features and higher usage, not ad removal.</p></div></div></section>
+<section class="section"><div class="notice"><b>Payment safety:</b> QR payments are subject to account-holder permission. A submitted transaction is only a payment request — Premium must be activated after the payment is verified through a secure process. Never share your PIN, password or OTP.</div></section>
+</main><footer>© 2026 StudyNepal AI · Learn with confidence · Privacy · Terms<br><small>AI answers can make mistakes. Check important academic information with your teacher or textbook.</small></footer>
+<div class="modal" id="payment"><div class="dialog"><button class="close" onclick="closeModal()">✕</button><span class="tag">SUBSCRIPTION PAYMENT</span><h2 id="payTitle">Premium</h2><p id="payAmount" class="sub"></p><p style="text-align:center;font-weight:800">Scan this eSewa QR to pay</p><img class="qr" src="assets/esewa-qr.jpg" alt="eSewa payment QR code"><form onsubmit="submitPayment(event)"><label for="txn">Transaction ID / reference number</label><input id="txn" required maxlength="80" placeholder="Enter payment reference"><label for="email">Your email (for subscription request)</label><input id="email" type="email" required placeholder="name@example.com"><button style="width:100%;margin-top:16px">Submit payment request</button></form><small class="help">Demo only: this form does not verify payment or activate Premium. A secure backend and account-holder-approved merchant/payment setup must be connected before accepting real subscriptions.</small></div></div>
+<div id="toast"></div>
+<script>
+let selectedPlan='';
+function pay(name,amount){selectedPlan=name;document.getElementById('payTitle').textContent='Premium — '+name;document.getElementById('payAmount').textContent='Amount: Rs. '+amount;document.getElementById('payment').classList.add('show')}
+function closeModal(){document.getElementById('payment').classList.remove('show')}
+function submitPayment(e){e.preventDefault();toast('Demo request captured on this screen only. No payment has been verified.');closeModal();e.target.reset()}
+function toast(msg){let t=document.getElementById('toast');t.textContent=msg;t.style.display='block';setTimeout(()=>t.style.display='none',3200)}
+function openTool(name){toast(name+' UI is ready for backend connection.')}
+document.getElementById('lang').addEventListener('change',e=>toast('Language selection: '+e.target.options[e.target.selectedIndex].text+' (full translations will be connected next).'));
+document.getElementById('payment').addEventListener('click',e=>{if(e.target.id==='payment')closeModal()});
+</script></body></html>
